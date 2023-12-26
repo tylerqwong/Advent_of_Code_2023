@@ -6,6 +6,9 @@
 
 /* Function Declarations */
 
+// TODO: Function description
+int get_coord(std::string line);
+
 /* Class Declarations */
 
 #endif  // ADVENTOFCODE2023_NAME_H_

@@ -36,17 +36,48 @@ int main()
     int acc = 0;            // Accumulates...
     std::string line;       // Used to save each line of the input data text file 
 
-    while(inf){
-        // Get a line of the file...
-        std::getline(inf, line);
-        acc++;
-    }
+    line = "asd1oijlkml";
+    std::cout << get_coord(line) << " expected 11\n";
+    line = "aisdjsakjd";
+    std::cout << get_coord(line) << " expected 0\n";
+    line = "9128374adsasd6987";
+    std::cout << get_coord(line) << " expected 97\n";
+
+    // while(inf){
+    //     // Get a line of the file...
+    //     std::getline(inf, line);
+
+    //     // Extract the coordinate from the line and add to acc
+    //     acc += get_coord(line);
+    // }
     
 
-    std::cout << line << '\n';
-    std::cout << acc << '\n';
+    // std::cout << line << '\n';
+    // std::cout << acc << '\n';
 
 }
 
 /* Function Definitions */
+int get_coord(std::string line){
+    std::string output, first, last = "";
+    int iter = 0;
 
+    for(int i = 0; i<line.length(); i++){
+        if (isdigit(line[i])){
+            if (first == ""){
+                first = line[i];
+            };
+            last = line[i];
+        }
+    };
+
+    if (last == ""){
+        return 0;
+    }
+    else{
+        output = first + last;
+        return stoi(output);
+    }
+
+    
+}
