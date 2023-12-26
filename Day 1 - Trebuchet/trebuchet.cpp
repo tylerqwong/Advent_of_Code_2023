@@ -33,27 +33,33 @@ int main()
     }
 
     // Initialize Variables
-    int acc = 0;            // Accumulates...
+    int acc, temp = 0;      // Accumulates...
     std::string line;       // Used to save each line of the input data text file 
 
-    line = "asd1oijlkml";
-    std::cout << get_coord(line) << " expected 11\n";
-    line = "aisdjsakjd";
-    std::cout << get_coord(line) << " expected 0\n";
-    line = "9128374adsasd6987";
-    std::cout << get_coord(line) << " expected 97\n";
+    do{
+        // Get a line of the file...
+        std::getline(inf, line);
 
-    // while(inf){
-    //     // Get a line of the file...
-    //     std::getline(inf, line);
+        // Extract the coordinate from the line and add to acc
+        temp = get_coord(line);
+        acc += temp;
 
-    //     // Extract the coordinate from the line and add to acc
-    //     acc += get_coord(line);
-    // }
+        // std::cout << line << '\n';
+        // std::cout << temp << '\n';
+
+        temp = 0;
+    } while(inf);
+    
+    std::cout << acc << '\n';
     
 
-    // std::cout << line << '\n';
-    // std::cout << acc << '\n';
+    // Test Cases
+    // line = "asd1oijlkml";
+    // std::cout << get_coord(line) << " expected 11\n";
+    // line = "aisdjsakjd";
+    // std::cout << get_coord(line) << " expected 0\n";
+    // line = "9128374adsasd6987";
+    // std::cout << get_coord(line) << " expected 97\n";
 
 }
 

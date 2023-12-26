@@ -6,7 +6,7 @@
 
 /* Function Declarations */
 
-// TODO: Function description
+// Takes a string and returns 2-digit co-ordinate number 
 int get_coord(std::string line);
 
 /* Class Declarations */
